@@ -16,10 +16,16 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
-const corsOptions = {
-    origin:'http://localhost:5173',
-    credentials:true
-}
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://jobfinder-steel-two.vercel.app"
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 4000

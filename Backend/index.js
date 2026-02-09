@@ -19,7 +19,7 @@ app.use(cookieParser());
 const corsOptions = {
     origin: [
         "http://localhost:5173",
-        "https://jobfinder-steel-two.vercel.app"
+        "https://job-finder-yuj4.onrender.com"
     ],
     credentials: true
 };
